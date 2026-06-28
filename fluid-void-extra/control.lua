@@ -2,7 +2,7 @@
 --FACTORIO MOD: Fluid Void Extra
 --A mod, redesigned from Rseding91's Fluid Void Mod, to work properly for newer versions.
 --Author: Nibuja05
---Date: 15.1.2019
+--Date: 28.06.2026
 -------------------------------------------------------------------------------
 
 local pipeSpeed = {1000, 500, 200, 100, 50, 25, 10, 5, 1}
@@ -11,7 +11,10 @@ local randomTickValue = nil
 
 function getRandomTick()
     if not randomTickValue then
-        randomTickValue = math.random(2, 59)
+        if not storage.rng then
+            storage.rng = game.create_random_generator()
+        end
+        randomTickValue = storage.rng(2, 59)
     end
     return randomTickValue
 end
