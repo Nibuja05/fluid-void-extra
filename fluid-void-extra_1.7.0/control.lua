@@ -81,13 +81,14 @@ function processPipesWithSpeed(speed)
 	if storage.pipes ~= nil then
 		for k, pipe in pairs(storage.pipes.speedClass[speed]) do
 			if pipe.valid then
-				if pipe.fluidbox[1] then
-					local content = pipe.fluidbox.get_fluid_segment_contents(1)
-                    local _, amount = next(content)
-                    local capacity = pipe.fluidbox.get_capacity(1)
+                local fluid = pipe.get_fluid_segment_fluid(1)
+
+				if fluid then
+					local amount = fluid.amount
+                    local capacity = pipe.get_fluid_segment_capacity(1)
                     local fill = (amount / capacity) * 100
 
-                    pipe.fluidbox.flush(1, pipe.fluidbox[1].name)
+                    pipe.clear_fluid_segment_fluid(1)
                     
                     if settings.global["fluid-void-extra-emit-pollution"].value then
                         -- ticks per minute 3600
