@@ -1,0 +1,10 @@
+{
+	"name": "fluid-void-extra2",
+	"version": "1.7.0",
+	"title": "Fluid Void Extra (2.1)",
+	"author": "Nibuja",
+	"homepage": "",
+	"dependencies": ["base >= 2.1"],
+	"description": "A pipe to void fluids. Redesigned for factorio version 2.0. Now with extra features, check the mod settings",
+	"factorio_version": "2.1"
+}
