@@ -31,6 +31,12 @@ script.on_event(defines.events.on_robot_built_entity,
 	end
 )
 
+script.on_event(defines.events.on_space_platform_built_entity,
+	function (event)
+		savePipe(event.entity)	
+	end
+)
+
 script.on_event({defines.events.on_tick},
 	function(event)
 		processPipes(event)
