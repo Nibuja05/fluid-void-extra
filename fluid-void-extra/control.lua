@@ -81,7 +81,7 @@ function processPipesWithSpeed(speed)
                     local capacity = pipe.fluidbox.get_capacity(1)
                     local fill = (amount / capacity) * 100
 
-                    pipe.fluidbox.flush(1, pipe.fluidbox[1])
+                    pipe.fluidbox.flush(1, pipe.fluidbox[1].name)
                     
                     if settings.global["fluid-void-extra-emit-pollution"].value then
                         -- ticks per minute 3600
